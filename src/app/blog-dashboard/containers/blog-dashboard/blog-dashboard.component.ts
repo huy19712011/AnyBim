@@ -24,4 +24,19 @@ export class BlogDashboardComponent implements OnInit {
     });
   }
 
+  handleViewCount(event: Article) {
+    event.viewCount = event.viewCount + 1;
+    this.dashboardService.updateArticle(event).subscribe((data: Article) => {
+      console.log(data);
+      
+      this.articles = this.articles.map((article: Article) => {
+        if (article.id === event.id) {
+          article = Object.assign({}, article, event);
+        }
+        return article;
+      });
+    });
+
+  }
+
 }

@@ -9,7 +9,7 @@
       </h3>
       <div class="meta-info">{{ article.createdAt | date }}</div>
       <p [innerHtml]='article.description'></p>
-      <a routerLink="{{article.id}}" class="continue-reading">Continue reading</a>
+      <a routerLink="{{article.id}}" (click)="viewCountChange(article)" class="continue-reading">Continue reading</a>
     </div>
   </div>
 </div>

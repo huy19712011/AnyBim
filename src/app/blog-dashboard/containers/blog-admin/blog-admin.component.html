@@ -1,1 +1,79 @@
-<p>blog-admin works!</p>
+  
+  <!-- <app-blog-navbar></app-blog-navbar>
+    <div class="app-blog-list-admin container">
+      <div style="text-align: center">
+        <button (click)="create()">New article</button>
+      </div>
+      <app-blog-header-admin></app-blog-header-admin>  
+      <app-blog-list-admin 
+      *ngFor="let article of articles" 
+      [article]="article"
+      (emitTogglePublishState)="handleTogglePublishState($event)">
+    </app-blog-list-admin>
+  </div> -->
+  
+  <!-- <table>
+    <thead>
+      <tr>
+        <app-blog-header-admin></app-blog-header-admin>  
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let article of articles">
+        <app-blog-list-admin 
+        [article]="article"
+        (emitTogglePublishState)="handleTogglePublishState($event)">
+      </app-blog-list-admin>
+    </tr>
+  </tbody>
+</table> -->
+
+
+<app-blog-navbar></app-blog-navbar>
+
+<div class="app-blog-list-admin">
+  <div >
+    <button (click)="create()">New article</button>
+  </div>
+  
+  <table>
+    <thead>
+      <tr>
+        <th class="overview-cell">Image</th>
+        <th class="overview-cell">Title</th>
+        <th class="overview-cell">Date</th>
+        <th class="overview-cell">Views</th>
+        <th class="overview-cell">Online</th>
+        <th class="overview-cell"></th>
+        <!-- <app-blog-header-admin></app-blog-header-admin>   -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let article of articles">
+        <td class="overview-cell">
+          <img [src]="article.imageUrl" class="overview-image" />
+        </td>
+        
+        <td class="overview-cell">
+          <a routerLink="../../articles/{{ article.id }}">{{ article.title }}</a>
+        </td>
+        
+        <td class="overview-cell">{{ article.date | date }}</td>
+        
+        <td class="overview-cell center">{{ article.viewCount }}</td>
+        
+        <td class="overview-cell center">
+          <span (click)="togglePublishState(article)"
+          class="dot publish-icon"
+          [ngClass]="{ online: article.published, offline: !article.published }"
+          ></span>
+        </td>
+        
+        <td class="overview-cell">
+          <a routerLink="{{article.id}}">Edit</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+</div>

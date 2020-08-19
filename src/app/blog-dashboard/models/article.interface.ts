@@ -9,17 +9,19 @@ export interface Article {
   viewCount: number,
   createdAt: Date,
   updatedAt: Date,
+  published: boolean,
 }
 
 // export class Article {
-//   id: number;
+//   id?: number;
 //   title: string;
 //   key: string;
 //   date: Date = new Date();
-//   content: Text;
-//   description: Text;
+//   content: string;
+//   description: string;
 //   imageUrl: string;
 //   viewCount: number;
-//   createdAt: Date;
-//   updatedAt: Date;
+//   createdAt?: Date;
+//   updatedAt?: Date;
+//   published?: boolean;
 // }

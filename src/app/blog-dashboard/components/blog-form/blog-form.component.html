@@ -1,1 +1,84 @@
-<p>blog-form works!</p>
+<form class="wrapper" #form="ngForm" novalidate>
+  
+  <!-- do not work if missing "id". Why ???  now fixed with some changes on update function (PUT) -->
+  <!--
+  <div class="property" hidden="true">
+    <label>ID:</label><br>
+    <input
+      name="id"
+      type="text"
+      [ngModel]="article.id"
+    />
+  </div>
+  -->
+  
+  <div class="property">
+    <label>Title:</label><br>
+    <input
+      name="title"
+      type="text"
+      [ngModel]="article?.title"
+      (keyup)="updateKey(form.value.title)"
+      (blur)="updateKey(form.value.title)"
+    />
+  </div>
+  <div class="property">
+    <label>Key:</label><br>
+    <input name="key" type="text" [ngModel]="article?.key" required/>
+  </div>
+  
+  <!--
+  <div class="property">
+    <label>Date:</label><br>
+    <input name="date" type="text" [ngModel]="article?.date | date" />
+  </div>
+  -->
+  
+  <div class="property">
+    <label>ImageUrl</label><br>
+    <input name="imageUrl" type="text" [ngModel]="article?.imageUrl" />
+  </div>
+  <div class="property">
+    <label>Description:</label><br>
+    <textarea
+      name="description"
+      type="text"
+      [ngModel]="article?.description"
+      class="description"
+    ></textarea>
+    <div class="character-count">
+      Characters: {{ article?.description.length }}
+    </div>
+  </div>
+  <div class="property">
+    <label>Content:</label>
+    <textarea name="content" type="text" [ngModel]="article?.content"></textarea>
+  </div>
+  <div class="character-count">
+    Article is
+    <span style="color: green;" *ngIf="article?.published">online</span>
+    <span style="color: red;" *ngIf="!article?.published">offline</span>.
+  </div>
+  <div>
+    <button
+      (click)="onDeleteArticle(form.value)"
+      style="color: red; margin-right: 10px;"
+      *ngIf="!isNew"
+    >
+      Delete
+    </button>
+    <button type="button" (click)="onViewPreview(form.value)" style="margin-right: 10px" *ngIf="!isNew">
+      Preview
+    </button>
+    <button (click)="onUpdateArticle(form.value)" *ngIf="!isNew" [disabled]="form.invalid">Update</button>
+    
+    <button (click)="onCreateArticle(form.value); saved=true; isNew=false" 
+            *ngIf="isNew" [disabled]="form.invalid">
+            Save as draft
+    </button>
+    <div *ngIf="saved" style="color: green">
+      Saved. <button type="button" (click)="onGetNewArticle(form.value)">View article.</button>
+    </div>
+  </div>
+</form>
+

@@ -1,0 +1,7 @@
+<app-blog-navbar></app-blog-navbar>
+<app-blog-form
+  [article] = "article"
+  (updateArticle)="handleUpdateArticle($event)"
+  (viewArticle)="handleViewArticle(article)"
+  (deleteArticle)="handleDeleteArticle($event)">
+</app-blog-form>

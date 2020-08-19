@@ -5,12 +5,12 @@ import { catchError, map, tap} from 'rxjs/operators';
 
 import { Article } from './models/article.interface';
 
-const BLOG_API: string = 'http://localhost:8000/articles';
+const BLOG_API: string = 'http://localhost:8000/admin/articles';
 
 @Injectable({
   providedIn: 'root'
 })
-export class BlogDashboardService {
+export class BlogAdminService {
 
   constructor(private http: HttpClient) { }
 
@@ -80,7 +80,7 @@ export class BlogDashboardService {
 
     return this.http.post<Article>(`${BLOG_API}`, article, options)
       .pipe(
-        tap(data => console.log('Created: ', data)),
+        tap(data => console.log('Created at HttpClient Service: ', data)),
         catchError(this.handleError<Article>('createArticle', article)),
       );
   }
@@ -100,3 +100,4 @@ export class BlogDashboardService {
     };
   }
 }
+
