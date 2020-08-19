@@ -19,7 +19,7 @@ import { BlogAdminViewerComponent } from './containers/blog-admin-viewer/blog-ad
 import { BlogAdminNewComponent } from './containers/blog-admin-new/blog-admin-new.component';
 import { LoginComponent } from './components/login/login.component';
 import { Interceptor } from './interceptor';
-
+import { JwtHelperService, JWT_OPTIONS  } from '@auth0/angular-jwt';
 
 
 @NgModule({
@@ -42,7 +42,9 @@ import { Interceptor } from './interceptor';
       provide: HTTP_INTERCEPTORS,
       useClass: Interceptor,
       multi: true,
-    }
+    },
+    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+    JwtHelperService,
   ],
 })
 export class BlogDashboardModule { }
