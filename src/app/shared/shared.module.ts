@@ -5,6 +5,7 @@ import { TopBarComponent } from './components/top-bar/top-bar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
+import { httpInterceptorProviders } from './http-interceptors/index';
 
 
 
@@ -19,6 +20,9 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     TopBarComponent,
     FooterComponent,
     NotFoundComponent,
+  ],
+  providers: [
+    httpInterceptorProviders,
   ]
 })
 export class SharedModule { }

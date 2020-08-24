@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpResponse, HttpHeaders} from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { catchError, map, tap} from 'rxjs/operators';
+import { catchError, map, tap, switchMap, filter} from 'rxjs/operators';
 
 import { Article } from './models/article.interface';
 
@@ -19,6 +19,7 @@ export class BlogDashboardService {
     return this.http.get<Article[]>(BLOG_API)
       .pipe(
         tap(data => console.log('Fetched Articles: ', data)),
+        map(articles => articles.filter(article => article.published === true)),
         catchError(this.handleError<Article[]>('getArticles', [])),
       );
   }

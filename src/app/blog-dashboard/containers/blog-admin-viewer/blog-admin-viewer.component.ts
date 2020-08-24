@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 
+import { ToastrService } from 'ngx-toastr';
+
 import { Article } from './../../models/article.interface';
 import { BlogAdminService } from './../../blog-admin.service';
 import { Title } from '@angular/platform-browser';
@@ -22,6 +24,7 @@ export class BlogAdminViewerComponent implements OnInit {
     private route: ActivatedRoute,
     private blogService: BlogAdminService,
     private titleService: Title,
+    private toastr: ToastrService,
   ) { }
 
   ngOnInit(): void {
@@ -63,10 +66,20 @@ export class BlogAdminViewerComponent implements OnInit {
   
   
   handleDeleteArticle(event: Article) {
-    this.blogService.removeArticle({...this.article, ...event}).subscribe((data: Article) => {
-      console.log(data);
-      this.router.navigate(['/admin/articles'])
-    });
+    this.blogService.removeArticle({...this.article, ...event}).subscribe(
+      (data: Article) => {
+        // console.log(data);
+        console.log('Deleted: ', data);
+        this.toastr.success('Deleted', 'Success', {timeOut: 5000});
+        this.router.navigate(['/admin/articles']);
+      },
+      // no need this handling error, we already did http handling error in service or interceptor
+      error => {
+        // this.router.navigate(['/admin/articles']);
+        // console.log('Error: ', error);
+        this.toastr.error('Cannot delete!');
+      },
+    );
   }
 
 }

@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { ToastrModule } from 'ngx-toastr';
+
 
 import { SharedModule } from './shared/shared.module';
 import { BlogDashboardModule } from './blog-dashboard/blog-dashboard.module';
@@ -17,6 +19,7 @@ import { BlogDashboardModule } from './blog-dashboard/blog-dashboard.module';
     AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
+    ToastrModule.forRoot({ timeOut: 2000, enableHtml: true }),
     SharedModule,
     BlogDashboardModule,
   ],
