@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+
 
 import { BlogDashboardService } from '../../blog-dashboard.service';
+import { GlobalConstants } from './../../../shared/GlobalConstants/global-constants';
 
 import { Article } from '../../models/article.interface';
 
@@ -12,9 +15,11 @@ import { Article } from '../../models/article.interface';
 })
 export class BlogDashboardComponent implements OnInit {
   articles: Article[];
+  title: string = 'articles';
   
   constructor (
     private dashboardService: BlogDashboardService,
+    private titleService: Title,
   ) { }
 
   ngOnInit(): void {
@@ -22,6 +27,8 @@ export class BlogDashboardComponent implements OnInit {
       console.log('Data: ', data);
       this.articles = data;
     });
+
+    this.titleService.setTitle(`${GlobalConstants.BLOG_TITLE}-${this.title}`);
   }
 
   handleViewCount(event: Article) {
