@@ -16,12 +16,13 @@ import { BlogDashboardModule } from './blog-dashboard/blog-dashboard.module';
     AppComponent
   ],
   imports: [
-    AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({ timeOut: 2000, enableHtml: true }),
     SharedModule,
     BlogDashboardModule,
+    
+    AppRoutingModule, //this must be called last
   ],
   providers: [],
   bootstrap: [AppComponent]

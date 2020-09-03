@@ -1,0 +1,14 @@
+<h1 [innerHtml]="name"></h1>
+<p>
+  Start editing to see some magic happen :)
+</p>
+
+<button type="button" (click)="getImageFromService()">Get Image</button>
+
+<img [src]="imageToShow"
+     alt="Place image title"
+     *ngIf="!isImageLoading;">
+
+<!-- <ng-template #noImageFound>
+     <img src="fallbackImage.png" alt="Fallbackimage">
+</ng-template> -->

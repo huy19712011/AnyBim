@@ -71,7 +71,6 @@ export class BlogFormComponent implements OnInit {
       this.article.key = value
         .toLowerCase()
         .replace(new RegExp(" ", "g"), "-");
-      console.log('Change');
     }
   }
   
