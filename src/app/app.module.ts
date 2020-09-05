@@ -10,6 +10,7 @@ import { ToastrModule } from 'ngx-toastr';
 
 import { SharedModule } from './shared/shared.module';
 import { BlogDashboardModule } from './blog-dashboard/blog-dashboard.module';
+import { ProductDashboardModule } from './product-dashboard/product-dashboard.module';
 
 @NgModule({
   declarations: [
@@ -21,8 +22,11 @@ import { BlogDashboardModule } from './blog-dashboard/blog-dashboard.module';
     ToastrModule.forRoot({ timeOut: 2000, enableHtml: true }),
     SharedModule,
     BlogDashboardModule,
+    ProductDashboardModule, 
     
-    AppRoutingModule, //this must be called last
+    // AppRoutingModule must be called last
+    AppRoutingModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

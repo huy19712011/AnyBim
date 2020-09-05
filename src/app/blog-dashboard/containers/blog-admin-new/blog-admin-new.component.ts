@@ -22,7 +22,8 @@ export class BlogAdminNewComponent implements OnInit {
 
   handleCreateArticle(article: Article) {
     console.log(article);
-    this.blogService.createArticle(article).subscribe(data => {
+    // this.blogService.createArticle(article).subscribe(data => {
+    this.blogService.create(article).subscribe(data => {
       this.article = data;
       console.log('Resolved: ', data);
     });

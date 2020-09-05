@@ -18,7 +18,7 @@ const routes: Routes = [
   {
     path: 'admin',
     children: [
-      { path: 'articles/new', component: BlogAdminComponent},
+      { path: 'articles/new', component: BlogAdminNewComponent},
       { path: 'articles/:id', component: BlogAdminViewerComponent},
       { path: 'articles', component: BlogAdminComponent, canActivate: [AuthGuardService]},
     ],

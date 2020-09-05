@@ -18,7 +18,8 @@ export class BlogAdminComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.adminService.getArticles().subscribe((data: Article[]) => {
+    // this.adminService.getArticles().subscribe((data: Article[]) => {
+    this.adminService.getAll().subscribe((data: Article[]) => {
       console.log('Data: ', data);
       this.articles = data;
     });
@@ -27,7 +28,8 @@ export class BlogAdminComponent implements OnInit {
 
   handleTogglePublishState(event: Article) {
     console.log(event);
-    this.adminService.updateArticle(event).subscribe((data: Article) => {
+    // this.adminService.updateArticle(event).subscribe((data: Article) => {
+    this.adminService.update(event).subscribe((data: Article) => {
       this.articles = this.articles.map((article: Article) => {
         if (article.id === data.id) {
           // article = Object.assign({}, article, event);
@@ -41,7 +43,8 @@ export class BlogAdminComponent implements OnInit {
   togglePublishState(event: Article) {
     // console.log(event);
     event.published = !event.published;
-    this.adminService.updateArticle(event).subscribe((data: Article) => {
+    // this.adminService.updateArticle(event).subscribe((data: Article) => {
+    this.adminService.update(event).subscribe((data: Article) => {
       this.articles = this.articles.map((article: Article) => {
         if (article.id === event.id) {
           // article = Object.assign({}, article, event);

@@ -33,7 +33,8 @@ export class BlogAdminViewerComponent implements OnInit {
         // let id = Number(params.get('id'));
         // console.log(params);
         // console.log(this.route.params);
-        return this.blogService.getArticle(Number(params.get('id')));
+        // return this.blogService.getArticle(Number(params.get('id')));
+        return this.blogService.get(Number(params.get('id')));
       }),
     ).subscribe((data: Article) => {
       // console.log(data);
@@ -50,7 +51,8 @@ export class BlogAdminViewerComponent implements OnInit {
     
     // const article = {...this.article, ...event};
 
-    this.blogService.updateArticle({...this.article, ...event}).subscribe((data: Article) => {
+    // this.blogService.updateArticle({...this.article, ...event}).subscribe((data: Article) => {
+    this.blogService.update({...this.article, ...event}).subscribe((data: Article) => {
       console.log(data);
       
       // this.article = Object.assign({}, this.article, event);
@@ -66,7 +68,8 @@ export class BlogAdminViewerComponent implements OnInit {
   
   
   handleDeleteArticle(event: Article) {
-    this.blogService.removeArticle({...this.article, ...event}).subscribe(
+    // this.blogService.removeArticle({...this.article, ...event}).subscribe(
+    this.blogService.remove({...this.article, ...event}).subscribe(
       (data: Article) => {
         // console.log(data);
         console.log('Deleted: ', data);
