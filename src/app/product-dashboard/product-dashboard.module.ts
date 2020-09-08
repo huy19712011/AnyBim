@@ -13,10 +13,11 @@ import { ProductListDetailComponent } from './components/product-list-detail/pro
 import { ProductAnyonComponent } from './containers/product-anyon/product-anyon.component';
 import { ProductTingconnectComponent } from './containers/product-tingconnect/product-tingconnect.component';
 import { ProductSmartmtoComponent } from './containers/product-smartmto/product-smartmto.component';
+import { PriceListCardComponent } from './components/price-list-card/price-list-card.component';
 
 
 @NgModule({
-  declarations: [ProductListComponent, ProductViewComponent, ProductCardComponent, ProductNavbarComponent, ProductListDetailComponent, ProductAnyonComponent, ProductTingconnectComponent, ProductSmartmtoComponent],
+  declarations: [ProductListComponent, ProductViewComponent, ProductCardComponent, ProductNavbarComponent, ProductListDetailComponent, ProductAnyonComponent, ProductTingconnectComponent, ProductSmartmtoComponent, PriceListCardComponent],
   imports: [
   CommonModule,
     HttpClientModule,
