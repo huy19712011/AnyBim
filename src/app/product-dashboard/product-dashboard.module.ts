@@ -8,10 +8,15 @@ import { ProductDashboardRoutingModule } from './product-dashboard-routing.modul
 import { ProductListComponent } from './containers/product-list/product-list.component';
 import { ProductViewComponent } from './containers/product-view/product-view.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
+import { ProductNavbarComponent } from './components/product-navbar/product-navbar.component';
+import { ProductListDetailComponent } from './components/product-list-detail/product-list-detail.component';
+import { ProductAnyonComponent } from './containers/product-anyon/product-anyon.component';
+import { ProductTingconnectComponent } from './containers/product-tingconnect/product-tingconnect.component';
+import { ProductSmartmtoComponent } from './containers/product-smartmto/product-smartmto.component';
 
 
 @NgModule({
-  declarations: [ProductListComponent, ProductViewComponent, ProductCardComponent],
+  declarations: [ProductListComponent, ProductViewComponent, ProductCardComponent, ProductNavbarComponent, ProductListDetailComponent, ProductAnyonComponent, ProductTingconnectComponent, ProductSmartmtoComponent],
   imports: [
   CommonModule,
     HttpClientModule,

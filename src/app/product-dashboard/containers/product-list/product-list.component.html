@@ -1,4 +1,9 @@
-<h1>Products</h1>
-<app-product-card *ngFor="let product of products" [product]="product">
+<app-product-navbar></app-product-navbar>
 
-</app-product-card>
+<div fxLayout="row wrap" fxLayoutAlign="space-between stretch" fxLayoutGap="0 50px">
+  <app-product-card *ngFor="let product of products"
+                    [product]="product"
+                    fxFlex="30%"
+                    >
+  </app-product-card>
+</div>

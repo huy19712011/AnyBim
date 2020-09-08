@@ -17,13 +17,13 @@ export class ProductListComponent implements OnInit {
   products: Product[];
 
   constructor(
-    private productService: ProductService,
     // private data2Service: Data2Service,
+    private productService: ProductService,
     ) { }
 
   ngOnInit(): void {
-    this.productService.getAll().subscribe((data: Product[]) => {
     // this.data2Service.getAll(PRODUCT_API).subscribe((data: Product[]) => {
+    this.productService.getAll().subscribe((data: Product[]) => {
       this.products = data;
     });
   }

@@ -1,4 +1,4 @@
-<mat-card fxLayout="row" fxLayoutGap="20px" style="width: 600px;">
+<mat-card fxLayout="row" fxLayoutGap="20px" >
   <mat-card-content fxFlex="25" fxLayoutAlign="center center">
     <img
       mat-card-image
@@ -8,15 +8,15 @@
     />
   </mat-card-content>
 
-  <mat-card-content fxFlex="75">
+  <mat-card-content fxFlex="75" fxLayoutAlign="center center">
     <div fxLayout="column" [routerLink]="['/products', product?.id, product?.name]">
       <mat-card-header fxLayoutAlign="center" class="center">
-        <mat-card-title fxLayoutAlign="center">{{
-          product?.name
-        }}</mat-card-title>
-        <mat-card-subtitle fxLayoutAlign="center">{{
-          product?.title
-        }}</mat-card-subtitle>
+        <mat-card-title fxLayoutAlign="center">
+          {{ product?.name }}
+        </mat-card-title>
+        <mat-card-subtitle fxLayoutAlign="center">
+          {{ product?.title }}
+        </mat-card-subtitle>
       </mat-card-header>
 
       <mat-card-content>
@@ -24,14 +24,12 @@
           {{ product?.description }}
         </p>
       </mat-card-content>
-    </div>
 
-    <div>
       <mat-card-actions fxLayoutAlign="end">
-        <!-- <button mat-button>Buy</button> -->
-        <button mat-button >Add to Cart</button>
+        <button mat-button>Read more...</button>
       </mat-card-actions>
     </div>
   </mat-card-content>
 </mat-card>
+
 

@@ -1,0 +1,64 @@
+<div class="container">
+<!-- Problems -->
+  <hr>
+  <h3 fxLayoutAlign="center">Những vấn đề bạn thường gặp phải khi quản lý tài liệu</h3>
+  
+  <div fxLayout="row wrap" fxLayoutAlign="center stretch" fxLayoutGap="0px">
+    <mat-card style="width: 300px;" *ngFor="let problem of problems">
+        <mat-card-content fxLayoutAlign="center">
+          {{ problem.title }}
+        </mat-card-content>
+        <mat-card-subtitle fxLayoutAlign="center">
+          {{ problem.target }}
+        </mat-card-subtitle>
+    </mat-card>
+  </div>
+
+  <mat-list>
+    <mat-list-item *ngFor="let message of problems">
+      <mat-icon matListIcon>lens</mat-icon>
+      <h1 matLine> {{message.title}} </h1>
+      <p matLine>
+        <i> {{message.target}} </i>
+      </p>
+    </mat-list-item>
+  </mat-list>
+
+  
+  <div class="row justify-content-center">
+    <div class="card col-3"  *ngFor="let problem of problems" style="margin: 5px;">
+      <div class="card-body">
+        <h6 class="card-title">{{ problem.title }}</h6>
+        <i class="card-subtitle mb-2 text-muted">{{ problem.target }}</i>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Benefits -->
+  <hr>
+  <h3 fxLayoutAlign="center">TẠI SAO KHÁCH HÀNG LỰA CHỌN ANYON</h3>
+
+  <mat-list>
+    <mat-list-item *ngFor="let benefit of benefits">
+      <mat-icon matListIcon>grade</mat-icon>
+      <h1 matLine> {{benefit.title}} </h1>
+      <p matLine>
+        <i> {{benefit.content}} </i>
+      </p>
+    </mat-list-item>
+  </mat-list>
+
+  <div class="row justify-content-center">
+    <div class="card col-3"  *ngFor="let benefit of benefits" style="margin: 5px;">
+      <div class="card-body">
+        <h6 class="card-title">{{ benefit.title }}</h6>
+        <i class="card-subtitle mb-2 text-muted">{{ benefit.content }}</i>
+      </div>
+    </div>
+  </div>
+
+
+  
+</div>
+
