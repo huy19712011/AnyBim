@@ -59,6 +59,39 @@
   </div>
 
 
+  <!-- Prices -->
+  <hr>
+  <h3 fxLayoutAlign="center">BẢNG GIÁ SẢN PHẨM</h3>
+
+  <div class="row justify-content-center">
+    <div class="card col-3"  *ngFor="let price of prices" style="margin: 5px;">
+      <div class="card-header">
+        <h4 class="card-title" fxLayoutAlign="center">{{ price.name }}</h4>
+
+      </div>
+      <div class="card-body">
+        <i class="card-subtitle mb-2 text-muted" fxLayoutAlign="center">{{ price.target }}</i>
+        <h5 class="card-title" fxLayoutAlign="center">{{ price.price }}</h5>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><mat-icon>done</mat-icon>
+          {{ price.numberOfUsers ? price.numberOfUsers.toString() + " Users" : "Unlimited Users"}}
+        </li>
+        <li class="list-group-item"><mat-icon>done</mat-icon>
+          {{ price.numberOfProjects ? price.numberOfProjects.toString() + " Projects" : "Unlimited Projects"}}
+        </li>
+        <li class="list-group-item"><mat-icon>done</mat-icon>
+          {{ price.numberOfRepositories ? price.numberOfRepositories.toString() + " Repositories" : "Unlimited Repositories"}}
+        </li>
+        <li class="list-group-item"><mat-icon>done</mat-icon>Technical Support</li>
+      </ul>
+      <div class="card-body" fxLayoutAlign="space-between">
+        <a href="#" class="btn btn-primary">Contact</a>
+        <a href="#" class="btn btn-primary">Buy</a>
+      </div>
+    </div>
+  </div>
+
   
 </div>
 
