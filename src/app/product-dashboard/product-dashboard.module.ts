@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
 
 import { MaterialModule } from './../shared/modules/material.module';
 
@@ -21,6 +23,7 @@ import { PriceListCardComponent } from './components/price-list-card/price-list-
   imports: [
   CommonModule,
     HttpClientModule,
+    FormsModule,
     MaterialModule,
     ProductDashboardRoutingModule,
   ]
