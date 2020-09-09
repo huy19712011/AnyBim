@@ -16,6 +16,7 @@ import { ProductAnyonComponent } from './containers/product-anyon/product-anyon.
 import { ProductTingconnectComponent } from './containers/product-tingconnect/product-tingconnect.component';
 import { ProductSmartmtoComponent } from './containers/product-smartmto/product-smartmto.component';
 import { PriceListCardComponent } from './components/price-list-card/price-list-card.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { PriceListCardComponent } from './components/price-list-card/price-list-
     HttpClientModule,
     FormsModule,
     MaterialModule,
+    SharedModule,
     ProductDashboardRoutingModule,
   ]
 })

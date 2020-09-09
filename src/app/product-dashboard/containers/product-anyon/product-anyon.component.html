@@ -63,69 +63,29 @@
   <hr>
   <h3 fxLayoutAlign="center">BẢNG GIÁ SẢN PHẨM</h3>
 
-  <div class="row justify-content-center">
-    <div class="card col-3"  *ngFor="let price of prices" style="margin: 5px;">
-      <div class="card-header">
-        <h4 class="card-title" fxLayoutAlign="center">{{ price.name }}</h4>
+  <!-- <div fxLayoutAlign="center" fxLayoutGap="5px">
+    <app-price-card *ngFor="let price of prices" [price]="price" fxFlex="30"></app-price-card>
+  </div> -->
 
-      </div>
-      <div class="card-body">
-        <i class="card-subtitle mb-2 text-muted" fxLayoutAlign="center">{{ price.target }}</i>
-        <h5 class="card-title" fxLayoutAlign="center">{{ price.price }}</h5>
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item"><mat-icon>done</mat-icon>
-          {{ price.numberOfUsers ? price.numberOfUsers.toString() + " Users" : "Unlimited Users"}}
-        </li>
-        <li class="list-group-item"><mat-icon>done</mat-icon>
-          {{ price.numberOfProjects ? price.numberOfProjects.toString() + " Projects" : "Unlimited Projects"}}
-        </li>
-        <li class="list-group-item"><mat-icon>done</mat-icon>
-          {{ price.numberOfRepositories ? price.numberOfRepositories.toString() + " Repositories" : "Unlimited Repositories"}}
-        </li>
-        <li class="list-group-item"><mat-icon>done</mat-icon>Technical Support</li>
-      </ul>
-      <div class="card-body" fxLayoutAlign="space-between">
-        <a href="#" class="btn btn-sm btn-info">Contact</a>
-        <a href="#" class="btn btn-sm btn-primary">Buy</a>
-      </div>
-    </div>
+  <div class="row justify-content-center">
+    <app-price-card *ngFor="let price of prices" [price]="price" class="col-3"></app-price-card>
   </div>
 
   
-    <!-- Form contact -->
-    <hr>
-    <h3 fxLayoutAlign="center" >CONTACT US</h3>
-  
-    <!-- <div fxLayoutAlign="center"> -->
-    <div class="row justify-content-center">
-      <mat-card style="width: 50%;">
-        <form>
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="input" class="form-control" id="name" placeholder="enter your name here...">
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="your-email@domain.com">
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="input" class="form-control" id="phone" placeholder="your phone number">
-          </div>
-          <div class="form-group">
-            <label for="address">Address</label>
-            <input type="input" class="form-control" id="address" placeholder="your address">
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea class="form-control" id="message" rows="3"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary mb-2 float-right">Submit</button>
-        </form>
-      </mat-card>
-    </div>
-  
+  <!-- Form contact -->
+  <hr>
+  <h3 fxLayoutAlign="center">CONTACT US</h3>
+
+  <!-- <div fxLayoutAlign="center">
+    <app-contact-form fxFlex="50"></app-contact-form>
+  </div> -->
+
+  <div class="row justify-content-center">
+    <app-contact-form class="col-6"></app-contact-form>
+  </div>
+
 
 </div>
+
+
 
