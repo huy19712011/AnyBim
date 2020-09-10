@@ -1,0 +1,19 @@
+<div class="card-body">
+  <h6 class="card-title">{{ item.title }}</h6>
+  <i class="card-subtitle mb-2 text-muted" *ngIf="item.target">{{ item.target }}</i>
+  <!-- <i class="card-subtitle mb-2 text-muted" *ngIf="isProblem">{{ item.target }}</i> -->
+  <i class="card-subtitle mb-2 text-muted" *ngIf="item.content">{{ item.content }}</i>
+  <!-- <i class="card-subtitle mb-2 text-muted" *ngIf="isBenefit">{{ item.content }}</i> -->
+</div>
+
+
+<!-- <div fxLayout="row wrap"  >
+  <div>
+    <mat-card-content>
+      {{ item.title }}
+    </mat-card-content>
+    <mat-card-subtitle fxLayoutAlign="center">
+      {{ item.target }}
+    </mat-card-subtitle>
+  </div>
+</div> -->

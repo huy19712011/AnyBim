@@ -1,7 +1,7 @@
-export interface Problem {
+export class Problem {
   id: number;
-  title: string,
-  target: string,
+  title: string;
+  target: string;
 }
 
 export const PROBLEMS: Problem[] =

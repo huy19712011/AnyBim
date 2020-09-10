@@ -1,19 +1,12 @@
 <div class="container">
-<!-- Problems -->
+  <!-- Problems -->
   <hr>
-  <h3 fxLayoutAlign="center">Những vấn đề bạn thường gặp phải khi quản lý tài liệu</h3>
-  
-  <div fxLayout="row wrap" fxLayoutAlign="center stretch" fxLayoutGap="0px">
-    <mat-card style="width: 300px;" *ngFor="let problem of problems">
-        <mat-card-content fxLayoutAlign="center">
-          {{ problem.title }}
-        </mat-card-content>
-        <mat-card-subtitle fxLayoutAlign="center">
-          {{ problem.target }}
-        </mat-card-subtitle>
-    </mat-card>
+  <div fxLayoutAlign="center">
+    <img src="http://localhost:8000/uploads/blog/images/logo_anyon-150x150.png">
   </div>
-
+  <hr>
+  <h3 fxLayoutAlign="center">NHỮNG VẤN ĐỀ BẠN THƯỜNG GẶP PHẢI KHI QUẢN LÝ TÀI LIỆU</h3>
+  
   <mat-list>
     <mat-list-item *ngFor="let message of problems">
       <mat-icon matListIcon>lens</mat-icon>
@@ -23,15 +16,14 @@
       </p>
     </mat-list-item>
   </mat-list>
-
   
+  <!-- <div fxLayout="row wrap" fxLayoutAlign="center stretch">
+    <app-text-card *ngFor="let item of problems" [item]="item" class="card" style="width: 300px;"></app-text-card>
+  </div> -->
+
   <div class="row justify-content-center">
-    <div class="card col-3"  *ngFor="let problem of problems" style="margin: 5px;">
-      <div class="card-body">
-        <h6 class="card-title">{{ problem.title }}</h6>
-        <i class="card-subtitle mb-2 text-muted">{{ problem.target }}</i>
-      </div>
-    </div>
+    <app-text-card *ngFor="let item of problems" [item]="item" class="card col-3" style="margin: 16px;"></app-text-card>
+    <!-- <app-text-card *ngFor="let item of problems" [item]="item" class="card col-3 m-3 "></app-text-card> -->
   </div>
 
 
@@ -50,13 +42,10 @@
   </mat-list>
 
   <div class="row justify-content-center">
-    <div class="card col-3"  *ngFor="let benefit of benefits" style="margin: 5px;">
-      <div class="card-body">
-        <h6 class="card-title">{{ benefit.title }}</h6>
-        <i class="card-subtitle mb-2 text-muted">{{ benefit.content }}</i>
-      </div>
-    </div>
+    <app-text-card *ngFor="let item of benefits" [item]="item" class="card col-3" style="margin: 16px;"></app-text-card>
+    <!-- <app-text-card *ngFor="let item of problems" [item]="item" class="card col-3 m-3 "></app-text-card> -->
   </div>
+
 
 
   <!-- Prices -->
@@ -83,6 +72,7 @@
   <div class="row justify-content-center">
     <app-contact-form class="col-6"></app-contact-form>
   </div>
+  <hr>
 
 
 </div>

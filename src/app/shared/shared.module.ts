@@ -8,11 +8,12 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { httpInterceptorProviders } from './http-interceptors/index';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
 import { PriceCardComponent } from './components/price-card/price-card.component';
+import { TextCardComponent } from './components/text-card/text-card.component';
 
 
 
 @NgModule({
-  declarations: [TopBarComponent, FooterComponent, NotFoundComponent, ContactFormComponent, PriceCardComponent],
+  declarations: [TopBarComponent, FooterComponent, NotFoundComponent, ContactFormComponent, PriceCardComponent, TextCardComponent],
   imports: [
     CommonModule,
     MaterialModule,
@@ -24,6 +25,7 @@ import { PriceCardComponent } from './components/price-card/price-card.component
     NotFoundComponent,
     ContactFormComponent,
     PriceCardComponent,
+    TextCardComponent,
   ],
   providers: [
     httpInterceptorProviders,

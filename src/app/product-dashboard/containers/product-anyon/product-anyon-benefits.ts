@@ -1,7 +1,7 @@
-export interface Benefit {
+export class Benefit {
   id: number;
-  title: string,
-  content: string,
+  title: string;
+  content: string;
 }
 
 export const BENEFITS: Benefit[] =
