@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { MaterialModule } from './modules/material.module';
 import { TopBarComponent } from './components/top-bar/top-bar.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -16,6 +17,7 @@ import { TextCardComponent } from './components/text-card/text-card.component';
   declarations: [TopBarComponent, FooterComponent, NotFoundComponent, ContactFormComponent, PriceCardComponent, TextCardComponent],
   imports: [
     CommonModule,
+    RouterModule,
     MaterialModule,
   ],
   exports: [
